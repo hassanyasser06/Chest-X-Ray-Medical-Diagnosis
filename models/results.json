@@ -1,0 +1,61 @@
+{
+  "config": {
+    "USE_LUNG_OPACITY": true,
+    "IMG_SIZE": 227,
+    "DEDUP": true,
+    "PREPROC": "paper",
+    "GAMMA": 0.8,
+    "TRAIN_PER_CLASS": 3500,
+    "SPLIT": [
+      0.8,
+      0.1,
+      0.1
+    ],
+    "SEED": 42,
+    "NUM_WORKERS": 0,
+    "USE_GAP": false,
+    "CNN_LR": 0.0001,
+    "CNN_MOMENTUM": 0.9,
+    "CNN_BATCH": 128,
+    "CNN_L2": 0.0001,
+    "CNN_EPOCHS": 6,
+    "PRETRAINED": true,
+    "BASELINES": [
+      "densenet121"
+    ],
+    "BASE_BATCH": 64,
+    "STAGE1_EPOCHS": 15,
+    "STAGE1_LR": 0.0001,
+    "STAGE2_EPOCHS": 25,
+    "STAGE2_LR": 1e-05,
+    "ES_PATIENCE": 5,
+    "PLATEAU_FACTOR": 0.5,
+    "PLATEAU_PATIENCE": 3
+  },
+  "results": {
+    "A: PaperCNN + SGDM": {
+      "acc": 79.41176470588235,
+      "sens": 82.0793528193752,
+      "spec": 92.32501344129531,
+      "prec": 78.82975773557787,
+      "f1": 80.25258500996058,
+      "auc": 0.9499875152123828
+    },
+    "B: PaperCNN + ADAM": {
+      "acc": 85.67362428842505,
+      "sens": 85.43377861160081,
+      "spec": 93.98980745451985,
+      "prec": 88.05127841284803,
+      "f1": 86.59263462510444,
+      "auc": 0.9679646544407687
+    },
+    "C: densenet121 (paper baseline protocol)": {
+      "acc": 93.69070208728652,
+      "sens": 95.30092184438357,
+      "spec": 97.55031957921291,
+      "prec": 94.2932717277837,
+      "f1": 94.7785351418711,
+      "auc": 0.9925225710623037
+    }
+  }
+}
