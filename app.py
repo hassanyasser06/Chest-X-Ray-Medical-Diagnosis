@@ -193,10 +193,10 @@ def launch_web_app(engine: DiagnosisEngine, port: int | None = None, share: bool
             traceback.print_exc()
             raise gr.Error(f"Diagnosis failed: {exc}") from exc
 
-    with gr.Blocks(title="COVID-19 Chest X-Ray Medical Diagnosis") as demo:
+    with gr.Blocks(title="Chest X-Ray Medical Diagnosis") as demo:
         gr.Markdown(
             """
-            # 🩻 COVID-19 Chest X-Ray Medical Diagnosis
+            # 🩻 Chest X-Ray Medical Diagnosis
             Upload a chest X-ray image to classify it into **COVID**, **Lung Opacity**, **Normal**, or **Viral Pneumonia**,
             with a **Grad-CAM** heatmap highlighting the regions that influenced the prediction (red = highest attention).
             """
@@ -264,7 +264,7 @@ def launch_web_app(engine: DiagnosisEngine, port: int | None = None, share: bool
 # ===========================================================================
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="COVID-19 Chest X-Ray Medical Diagnosis App")
+    parser = argparse.ArgumentParser(description="Chest X-Ray Medical Diagnosis App")
     parser.add_argument("--model", type=str, default=None, help="Optional path to a custom .pth checkpoint")
     parser.add_argument(
         "--arch",
